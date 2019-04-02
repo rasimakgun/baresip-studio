@@ -92,7 +92,7 @@ class Account(val accp: String) {
         else
             res = res + ";vm_uri=\"$vmUri\""
 
-        res = res + ";ptime=20;regint=${regint};regq=0.5;pubint=0;answermode=manual;call_transfer=yes"
+        res = res + ";ptime=20;video_codecs=h264;regint=${regint};regq=0.5;pubint=0;answermode=manual;call_transfer=yes"
 
         return res
     }

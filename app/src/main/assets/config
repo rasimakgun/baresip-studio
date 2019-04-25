@@ -1,4 +1,5 @@
 auto_start no
+log_level 2
 poll_method epoll
 sip_trans_bsize 128
 call_local_timeout 120
@@ -13,7 +14,7 @@ audio_level no
 video_display opengles,nil
 video_size 352x288
 video_bitrate 500000
-video_fps 25
+video_fps 25.0
 video_fullscreen no
 videnc_format yuv420p
 rtp_tos 184
@@ -21,6 +22,8 @@ rtcp_mux no
 jitter_buffer_delay 5-10
 rtp_stats no
 dns_server 8.8.8.8:53
+dns_server [2001:4860:4860::8888]:53
+prefer_ipv6 no
 module opus.so
 module g711.so
 module avcodec.so
@@ -47,3 +50,7 @@ ice_debug no
 ice_nomination regular
 ice_mode full
 zrtp_hash yes
+#avcodec_h264enc libx264
+avcodec_h264dec	h264
+#h265_encoder libx265
+h265_decoder hevc

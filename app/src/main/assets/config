@@ -10,13 +10,16 @@ audio_alert opensles,nil
 audio_srate 8000-48000
 audio_channels 1-2
 audio_level no
-#video_source v4l2,/dev/video0
 video_display opengles,nil
 video_size 352x288
 video_bitrate 500000
 video_fps 25.0
 video_fullscreen no
 videnc_format yuv420p
+ausrc_format s16
+auenc_format s16
+auplay_format s16
+audec_format s16
 rtp_tos 184
 rtcp_mux no
 jitter_buffer_delay 5-10
@@ -27,6 +30,8 @@ prefer_ipv6 no
 module opus.so
 module g711.so
 module avcodec.so
+module g7221.so
+module webrtc_aec.so
 module opensles.so
 module opengles.so
 module stun.so

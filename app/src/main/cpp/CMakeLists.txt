@@ -34,6 +34,14 @@ add_library(lib_swresample STATIC IMPORTED)
 set_target_properties(lib_swresample PROPERTIES IMPORTED_LOCATION
         ${distribution_DIR}/ffmpeg/lib/${ANDROID_ABI}/libswresample.a)
 
+add_library(lib_g722_1 STATIC IMPORTED)
+set_target_properties(lib_g722_1 PROPERTIES IMPORTED_LOCATION
+        ${distribution_DIR}/g7221/lib/${ANDROID_ABI}/libg722_1.a)
+
+add_library(lib_webrtc STATIC IMPORTED)
+set_target_properties(lib_webrtc PROPERTIES IMPORTED_LOCATION
+        ${distribution_DIR}/webrtc/lib/${ANDROID_ABI}/libwebrtc.a)
+
 add_library(lib_bn STATIC IMPORTED)
 set_target_properties(lib_bn PROPERTIES IMPORTED_LOCATION
         ${distribution_DIR}/bn/lib/${ANDROID_ABI}/libbn.a)
@@ -66,9 +74,11 @@ target_link_libraries(baresip
         lib_ssl
         lib_crypto
         lib_opus
+        lib_g722_1
         lib_avcodec
         lib_avutil
         lib_swresample
+        lib_webrtc
         lib_zrtp
         lib_bn
         z
